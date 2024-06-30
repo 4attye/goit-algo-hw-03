@@ -1,7 +1,7 @@
 import random
 
 
-def get_numbers_ticket(min_num, max_num, quantity):
+def get_numbers_ticket(min_num: int, max_num: int, quantity: int):
     # Перевірка валідності вхідних параметрів
     if (not (1 <= min_num <= max_num <= 1000)
             or quantity >= max_num
