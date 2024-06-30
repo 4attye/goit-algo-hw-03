@@ -1,17 +1,22 @@
 from datetime import datetime
 
-enter_date = input("Enter a date YYYY-MM-DD:")
+# Введення дати
+entered_date = input("Enter a date YYYY-MM-DD:")
 
 
-def get_days_from_today(date):
+def get_days_from_today(given_date):
     while True:
         try:
-            date = datetime.strptime(date, '%Y-%m-%d').date()
+            # Перетворення рядка дати у форматі 'YYYY-MM-DD'
+            given_date = datetime.strptime(given_date, '%Y-%m-%d').date()
+            # Отримання поточної дати
             current_date = datetime.today().date()
-            return current_date.toordinal() - date.toordinal()
+            # Розрахунок і повернення різниці між поточною датою та заданою датою
+            return current_date.toordinal() - given_date.toordinal()
         except ValueError:
-            date = input("Please enter a valid date YYYY-MM-DD :")
+            # В разі помилки виводить "Please enter a valid date YYYY-MM-DD:" та очікує введення коректних данних
+            given_date = input("Please enter a valid date YYYY-MM-DD:")
 
 
-result = get_days_from_today(enter_date)
+result = get_days_from_today(entered_date)
 print(result)
