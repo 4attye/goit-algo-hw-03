@@ -11,10 +11,10 @@ def normalize_phone(phone_number):
         normalized_number = cleaned_number
         # Якщо номер починається з '38', то додаємо тільки '+'
     elif cleaned_number.startswith('38'):
-            normalized_number = '+' + cleaned_number
+        normalized_number = '+' + cleaned_number
     else:
-            # В інших випадках додаємо '+38'
-            normalized_number = '+38' + cleaned_number
+        # В інших випадках додаємо '+38'
+        normalized_number = '+38' + cleaned_number
 
     return normalized_number
 
